@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine's Day</title>
+<style>
+  body {
+    background-image: url('muah.jpeg'); /* Replace 'background.jpg' with the path to your image */
+    background-size: 640px auto; /* Set the width to 200 pixels and let the height adjust automatically */
+    background-position: top left; /* Position the background image at the top-left corner */
+    background-repeat: no-repeat;
+}
+</style>
+</head>
+<body>
+
+<h2>Would you be my Valentine?</h2>
+<img src="baloons.jpeg" width="300" height="400">
+
+<form action="Yes.html" method="get" id="valentineForm">
+  <label for="Yes"><a href="Yes.html" id="yesOption">Yes</a></label>
+  <label for="No" style="margin-left: 10px;"><a href="No.html" id="noOption">No</a></label><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+document.getElementById('noOption').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default action of anchor tag
+    window.location.href = this.href; // Redirect to the URL specified in the href attribute
+});
+
+document.getElementById('yesOption').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default action of anchor tag
+    document.getElementById('valentineForm').submit(); // Submit the form to redirect to Yes.html
+});
+</script>
+
+</body>
+</html>
